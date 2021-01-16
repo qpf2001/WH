@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var arr = [22,33,44,55,66,11,0, ]
+        //     max = arr[0]
+        //     for(var i = 1; i < arr.length; i++){
+        //         if(max > arr[i]){
+        //             max = arr[i]
+        //         }
+        //     }
+        //     console.log(max);
+        // var arr = []
+        //     for(var i = 0; i < 10000; i++){
+        //         arr[i] = i + 1;
+        //     }
+        //     console.log(arr);
+        // 
+        // function getsum(num1,num2){
+        //     console.log(num1 + num2);
+        // }
+        // getsum(6,9)
+        // function getsums(start,end){
+        //    var sum = 0;
+        //     for(var i = start; i <= end; i++){
+        //         sum += i
+        //     }
+        //     console.log(sum);
+        // }
+        // getsums(1,100)
+        // function getMAX(num1,num2){
+        //     return num1 > num2 ? num1 : num2
+        // }
+        // console.log(getMAX(3,9));
+        function getArrmax(arr){
+            var max = arr[0]
+            for(var i = 1; i <= arr.length; i++){
+                if(arr[i] > max){
+                    max = arr[i]
+                }
+            }
+            return max;
+        }
+        var result = getArrmax([52,32,62,12,3,4,9966])
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

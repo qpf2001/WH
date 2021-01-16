@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var tan = prompt(
+        "1.加法运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出"
+      );
+      //函数的特点，因为本身的特性，函数调用执行完毕，就垃圾回收
+      function jisuan(shuzi) {
+        var num1 = parseInt(prompt("第一个数字"));
+        var num2 = parseInt(prompt("第二个数字"));
+        var result;
+        switch (parseInt(shuzi)) {
+          // 判断要输入的状态
+          case 1:
+            result = num1 + num2;
+            break;
+          case 2:
+            result = num1 - num2;
+            break;
+          case 3:
+            result = num1 * num2;
+            break;
+          case 4:
+            result = num1 / num2;
+            break;
+          case 5:
+            break;
+        }
+        alert(result);
+        tan = prompt("1.+运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

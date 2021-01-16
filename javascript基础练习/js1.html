@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // function getMAX(){
+    //   var max = arguments[0]
+    //   for(var i = 0; i < arguments.length; i++){
+    //     if(arguments[i] > max){
+    //       max = arguments[i]
+    //     }
+    //   }
+    //   return max
+    // }
+    // console.log(getMAX(5,2,52,522,52,5,52,5,5));
+
+    // function reverse(arr){
+    //   var newArr = []
+    //   for(var i = arr.length - 1; i >= 0; i--){
+    //     newArr[newArr.length] = arr[i]
+    //   }
+    //   return newArr
+    // }
+    // var arr1 = reverse([2,55,22,63,6])
+    // console.log(arr1)
+    // function sort(arr) {
+    //   for (var i = 0; i < arr.length - 1; i++) {
+    //     for (var j = 0; j < arr.length - i - 1; j++) {
+    //       if (arr[j] > arr[j + 1]) {
+    //         var temp = arr[j]
+    //         arr[j] = arr[j + 1]
+    //         arr[j + 1] = temp
+    //       }
+    //     }
+    //   }
+    //   return arr
+    // }
+    // var arr1 = sort([9, 8, 7, 5, 4, 6])
+    // console.log(arr1);
+    // function f1(){
+    //   var a;
+    //   a = b = c = 9;
+    //   console.log(a);
+    //   console.log(b);
+    //   console.log(c);
+    // }
+    // f1()
+    // console.log(c);
+    // console.log(b);
+    // console.log(a);
+    // var star = {
+    //   name : '秦培峰',
+    //   age : 20,
+    //   sex : '男',
+    //   say : function(){
+    //     alert('你们好');
+    //   }
+    // }
+    // alert(star.sex  + '\n' + star.age + '\n' + star.name)
+    var obj = new Object();
+    obj.name = "秦培峰";
+    obj.age = "18";
+    obj.sex = "男";
+    obj.sayHi = function(){
+      console.log("你们好啊！");
+    }
+    console.log(obj.name);
+    console.log(obj['age']);
+    obj.sayHi()
+
+    
+    function Star(name,sex,age){
+      this.name = name;
+      this.sex = sex;
+      this.age = age;
+      this.sing = function(sang){
+        console.log(sang);
+      }
+    }
+    var one = new Star('秦培峰','男',20);
+    one.sing('这个年纪')
+     for(var k in one){
+       console.log(one[k]);
+     }
+    
+  </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.</head>
+
+<body>
+
+</body>
+
+</html>

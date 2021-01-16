@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      var random = getRandom(1, 10);
+      var num = prompt("1--10你来猜？");
+      for (var i = 0; i <= 5; i++) {}
+      while (true) {
+        if (num > random) {
+          alert("大了");
+        } else if (num < random) {
+          alert("小了");
+        } else {
+          alert("对了");
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
