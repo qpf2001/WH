@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //字符串的操作方法
+      var str = "qpf";
+      console.log(str.concat("shuaige"));
+
+      //substr("获取起始位置","截取几个字符")
+      var str1 = "qpfshishuaige";
+      console.log(str1.substr(2, 5)); //2代表的是索引号，5代表截取几个字符
+
+      //字符串的替换 replace 他只会替换第一个字符
+      var str2 = "qpf";
+      console.log(str2.replace("q", "f"));
+
+      //有一个字符串要求吧里面所有的o,替换成q "oploiojoloiop"
+      var str3 = "oploiojoloiop";
+      while (str3.indexOf("o") !== -1) {
+        str3 = str3.replace("o", "q");
+      }
+      console.log(str3);
+      //字符串转换为数组，split("分隔符") 前面学过 join 把数组转换为字符串
+      var str4 = "red,pink,blue";
+      console.log(str4.split(","));
+      var str5 = "qpf&wzy&qkw";
+      console.log(str5.split("&"));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //函数的形参也可以是看作是一个变量，当我们Ⅷ引用变量传递给形参时，其实是把变量在栈空间里保存的堆地址赋值给了形参，形参和实其实保存的是同一个地址，所以操作的是同一个对象
+      function Person(name) {
+        this.name = name;
+      }
+      function f1(x) {
+        //x = p
+        console.log(x.name); //秦凯雯
+        x.name = "秦培峰";
+        console.log(x.name); //秦培峰
+      }
+      var p = new Person("秦凯雯");
+      console.log(p.name + "卧槽"); //秦凯雯
+      f1(p);
+      console.log(p.name + "嗯哼"); //秦培峰
+    </script>
+  </head>
+  <body></body>
+</html>
