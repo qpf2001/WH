@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>代码烟花秀</title>
+    <style>
+        html,
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background-image: url(bg.png);
+            background-size: 100% 100%;
+            background-size: 100%; 
+            background-repeat:no-repeat;
+        }
+
+        .demo {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            margin: 150px auto 30px auto;
+            text-align: center;
+            font-family: 'Roboto';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="fireworks.js"></script>
+    <script>
+        $('.demo').fireworks({
+            sound: true,
+            opacity: 0.6,
+            width: '100%',
+            height: '100%'
+        });
+    </script>
+
+</body>
+
+</html>
