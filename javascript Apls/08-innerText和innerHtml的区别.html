@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <p>
+      我是大哥
+      <span>你是弟</span>
+    </p>
+    <script>
+      //innerText和 innerHTMl的区别
+      //1.innerText 不识别HTML标签。非标准
+      var div = document.querySelector("div");
+      div.innerText = "<strong>今天是</strong>：2021/1/28";
+      //2.innerTHML 识别HTML,W3C标准
+      div.innerHTML = " <strong>今天是:</strong>2021/1/28";
+      //这两个属性是可读写的 可以获取元素里面的内容
+      var p = document.querySelector("p");
+      console.log(p.innerText);
+      console.log(p.innerHTML);
+    </script>
+  </body>
+</html>

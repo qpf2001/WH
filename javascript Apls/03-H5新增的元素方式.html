@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <ul id="nav">
+      <li>首页</li>
+      <li>关于我们</li>
+    </ul>
+    <script>
+      //1.getElementsByClassName 根据类名获得某些元素
+      var boxs = document.getElementsByClassName("box");
+      console.log(boxs);
+      //2.querySelector 返回指定选择器的第一个元素， 切记里面的选择器需要加符号 .bax #nav
+      var firstBox = document.querySelector(".box");
+      console.log(firstBox);
+      var nav = document.querySelector("#nav");
+      console.log(nav);
+      var li = document.querySelector("li");
+      console.log(li);
+      //3.querSelectorAll()返回选择器的所有元素对象集合
+      var all = document.querySelectorAll(".box");
+      console.log(all);
+      var lis = document.querySelectorAll("li");
+      console.log(lis);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="nam">秦培峰</div>
+    <script>
+      //1.因为我们的文档是从上往下加载的，所以的先有标签，所以script写在标签下面
+      //2.get 获得element元素by通过 驼峰命名法
+      //3.参数id大小写敏感的字符串
+      //4.返回的是一个元素对象
+      //5.console.dir打印我们返回的元素对象，更好的查看里面的属性和方法
+      var name = document.getElementById("nam");
+      console.log(nam);
+      console.log(typeof nam);
+      console.dir(nam);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      img {
+        display: block;
+        width: 50%;
+        height: 50%;
+        margin-top: 50px;
+      }
+      button {
+        margin: 10px 0;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="qpf">秦培峰</button>
+    <button id="wjl">王江林</button>
+    <img src="./images/01.jpg" alt="" />
+    <script>
+      var qpf = document.getElementById("qpf");
+      var wjl = document.getElementById("wjl");
+      var img = document.querySelector("img");
+      qpf.onclick = function () {
+        img.src = "./images/02.jpg";
+        img.title = "秦培峰";
+      };
+      wjl.onclick = function () {
+        img.src = "./images/01.jpg";
+        img.title = "王江林";
+      };
+    </script>
+  </body>
+</html>

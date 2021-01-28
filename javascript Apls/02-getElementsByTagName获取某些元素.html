@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>阿峰</li>
+      <li>阿峰</li>
+      <li>阿峰</li>
+      <li>阿峰</li>
+      <li>阿峰</li>
+    </ul>
+    <ol id="ol">
+      <li>王江林</li>
+      <li>王江林</li>
+      <li>王江林</li>
+      <li>王江林</li>
+    </ol>
+    <ol>
+      <li>亲凯文</li>
+      <li>亲凯文</li>
+      <li>亲凯文</li>
+      <li>亲凯文</li>
+    </ol>
+    <script>
+      document.getElement;
+      //1.返回的是 获取过来的对象的集合 以伪数组的形式储存
+      var lis = document.getElementsByTagName("li");
+      console.log(lis);
+      console.log(lis[0]);
+      //2.依次打印里面的元素对象，可以采用遍历对象的方式
+      for (var i = 0; i < lis.length; i++) {
+        console.log(lis[i]);
+      }
+      //3.如果一个页面中只有一个li 返回的还是伪数组的形式
+      //4.如果没有这个元素，则返回空的伪数组的形式
+      //5.element.getElementsByTagName("标签名");父元素必须是指定的单个元素
+      //var ol = document.getElementsByTagName("ol");
+      //console.log(ol[0].getElementsByTagName("li"));
+      var ol = document.getElementById("ol");
+      console.log(ol.getElementsByTagName("li"));
+    </script>
+  </body>
+</html>

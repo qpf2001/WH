@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div,
+      p {
+        width: 200px;
+        height: 50px;
+        background-color: aqua;
+        line-height: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button>显示当前时间</button>
+    <p>我要改变</p>
+    <div>某个时间</div>
+    <script>
+      //当我们点击按钮里面的div里的文字发生了改变
+      //1.获取元素
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      //2.注册事件
+      btn.onclick = function () {
+        div.innerText = getDate();
+      };
+      function getDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var arr = [
+          "星期日",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+        var day = date.getDay();
+        return "今天是:" + year + "-" + month + "-" + dates + "-" + arr[day];
+      }
+      //元素可以不添加事件
+      var p = document.querySelector("p");
+      p.innerText = getDate();
+    </script>
+  </body>
+</html>
