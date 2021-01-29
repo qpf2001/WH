@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      var div = document.querySelector("div");
+      var flag = 0;
+      div.onclick = function () {
+        if (flag == 0) {
+          //div.style里面的属性采取驼峰命名法
+          this.style.backgroundColor = "pink";
+          this.style.width = "300px";
+          this.style.height = "300px";
+          flag = 1;
+        } else {
+          this.style.backgroundColor = "skyblue";
+          this.style.width = "200px";
+          this.style.height = "200px";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>

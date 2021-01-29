@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        cursor: pointer;
+      }
+      .change {
+        width: 200px;
+        height: 200px;
+        background-color: slateblue;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">秦培峰</div>
+    <script>
+      //使用element.style适用于修改元素样式比较少或者功能比较简单的情况下
+      var text = document.querySelector("div");
+      text.onclick = function () {
+        //切记不要加点 .
+        //如果想要保留原来的类名,可以采用多类名选择器
+        this.className = "box change";
+      };
+    </script>
+  </body>
+</html>

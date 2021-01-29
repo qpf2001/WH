@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+      }
+      .btn {
+        position: absolute;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #eee;
+        text-decoration: none;
+        font-style: normal;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: tomato;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <i class="btn">x</i>
+      <img src="./images/tao.png" alt="" id="img" />
+    </div>
+      <script>
+       var btn = document.querySelector(".btn")
+       var box = document.querySelector(".box")
+       btn.onclick = function (){
+           box.style.display = "none"
+       }
+      </script>
+    </div>
+  </body>
+</html>
