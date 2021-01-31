@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .backdrop {
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
+        margin: 100px auto;
+      }
+      .backdrop img {
+        width: 24%;
+      }
+      body {
+        background: url(./images/1.jpg) no-repeat center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="backdrop">
+      <img src="./images/1.jpg" alt="" />
+      <img src="./images/2.jpg" alt="" />
+      <img src="./images/3.jpg" alt="" />
+      <img src="./images/4.jpg" alt="" />
+    </div>
+    <script>
+      var img = document.getElementsByTagName("img");
+      for (var i = 0; i < img.length; i++) {
+        img[i].onclick = function () {
+          document.body.style.backgroundImage = "url(" + this.src + ")";
+          console.log(this.src);
+        };
+      }
+    </script>
+  </body>
+</html>
