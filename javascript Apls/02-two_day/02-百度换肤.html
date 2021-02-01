@@ -13,6 +13,7 @@
       }
       .backdrop img {
         width: 24%;
+        cursor: pointer;
       }
       body {
         background: url(./images/1.jpg) no-repeat center;
@@ -29,10 +30,9 @@
     </div>
     <script>
       var img = document.getElementsByTagName("img");
-      for (var i = 0; i < img.length; i++) {
+      for (let i = 0; i < img.length; i++) {
         img[i].onclick = function () {
           document.body.style.backgroundImage = "url(" + this.src + ")";
-          console.log(this.src);
         };
       }
     </script>

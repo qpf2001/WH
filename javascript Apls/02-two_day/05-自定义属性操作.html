@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" index="1"></div>
+    <script>
+      let div = document.querySelector("div");
+      //获得元素的属性值
+      //(1)element.属性值
+      console.log(div.id);
+      //(2)element.getAttribute("属性")
+      console.log(div.getAttribute("id"));
+      div.id = "wbd";
+      div.setAttribute("index", 2);
+      div.removeAttribute("index");
+    </script>
+  </body>
+</html>

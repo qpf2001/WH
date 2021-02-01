@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol>
+      <li>阿西吧</li>
+      <li>阿西吧</li>
+      <li>阿西吧</li>
+      <li>阿西吧</li>
+      <li>啊八八八</li>
+    </ol>
+    <script>
+      let ol = document.querySelector("ol");
+      //1.fifirstChild 第一个子节点。不管是文本节点，还是元素节点
+      console.log(ol.firstElementChild);
+      console.log(ol.lastElementChild);
+      console.log(ol.children);
+      //3.实际开发中的写法  既没有兼容性的问题，又返回第一个子元素
+      console.log(ol.children[0]);
+      console.log(ol.children.length);
+      console.log(ol.children[ol.children.length - 1]);
+    </script>
+  </body>
+</html>

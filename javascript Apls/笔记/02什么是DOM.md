@@ -10,9 +10,9 @@ w3c已经定义了一系列的DOM接口，通过这些DOM接口可以改变网�
 
 
 
+![](C:\Users\Administrator\Desktop\WH\javascript Apls\typora-user-images\1611799149409.png)
 
 
-![1611799149409](C:\Users\Administrator\Desktop\Apls\images\tree.png)
 
 + 文档：一个页面就是一个文档，DOM中使用doucment表示
 + 元素：页面中所有标签都是元素，DOM中使用element表示

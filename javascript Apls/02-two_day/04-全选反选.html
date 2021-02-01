@@ -114,6 +114,7 @@
           for (var i = 0; i < j_tb.length; i++) {
             if (!j_tb[i].checked) {
               flag = false;
+              break; //退出for循环，提高执行效率
             }
           }
           St_All.checked = flag;
