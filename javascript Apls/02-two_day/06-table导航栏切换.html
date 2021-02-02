@@ -63,16 +63,15 @@
     </div>
     <script>
       let tab_list = document.querySelector(".tab_list");
-      let lis = tab_list.querySelectorAll("Li");
+      let lis = document.querySelectorAll("li");
       let item = document.querySelectorAll(".item");
-      for (var i = 0; i < lis.length; i++) {
-        //给5个li设置索引号
+      for (let i = 0; i < lis.length; i++) {
         lis[i].setAttribute("index", i);
         lis[i].onclick = function () {
           for (let i = 0; i < lis.length; i++) {
             lis[i].className = "";
           }
-          this.className = "current";
+          this.className = "current ";
           let index = this.getAttribute("index");
           console.log(index);
           for (let i = 0; i < item.length; i++) {
