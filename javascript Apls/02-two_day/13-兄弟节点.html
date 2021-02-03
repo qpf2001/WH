@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>123</div>
+    <span>秦培峰</span>
+    <script>
+      let div = document.querySelector("div");
+      //nextSibling 下一个兄弟节点，包括文本节点，元素节点等等。
+      let span = div.nextSibling;
+      console.log(span);
+      console.log(div.previousSibling);
+      //当前元素下一个兄弟元素节点
+      console.log(div.nextElementSibling);
+      //当前元素上一个兄弟元素节点
+      console.log(div.previousElementSibling);
+    </script>
+  </body>
+</html>
