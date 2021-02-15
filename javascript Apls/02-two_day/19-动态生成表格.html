@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 500px;
+        margin: 100px auto;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      td,
+      th {
+        border: 1px solid #333;
+      }
+
+      thead tr {
+        height: 40px;
+        background-color: #eee;
+      }
+      a {
+        text-decoration: none;
+        color: brown;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>科目</th>
+          <th>成绩</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var datas = [
+        {
+          name: "秦培峰",
+          subject: "javacript",
+          score: "100",
+        },
+        {
+          name: "武则天",
+          subject: "javacript",
+          score: "80",
+        },
+        {
+          name: "马小跳",
+          subject: "javacript",
+          score: "90",
+        },
+        {
+          name: "二狗子",
+          subject: "javacript",
+          score: "40",
+        },
+      ];
+      //往tbody 里面创建行: 有几个人(通过数组的长度) 我们就创建几行
+      let tbody = document.querySelector("tbody");
+      for (let i = 0; i < datas.length; i++) {
+        //tr创建行
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        //行里面创建单元格 td 单元格的数量取决于对象里面的个数 for循环遍历对象
+        for (let k in datas[i]) {
+          //创建单元格
+          let td = document.createElement("td");
+          //把对象里面的属性值 给 td
+          td.innerHTML = datas[i][k];
+          tr.appendChild(td);
+        }
+        let td = document.createElement("td");
+        td.innerHTML = "<a href='javascript:;'>删除</a>";
+        tr.appendChild(td);
+      }
+      let remove = document.querySelectorAll("a");
+      for (let i = 0; i < remove.length; i++) {
+        remove[i].onclick = function () {
+          //点击a 删除 当前的a所在的行（链接爸爸的爸爸）node.removeChild(child)
+          tbody.removeChild(this.parentNode.parentNode);
+        };
+      }
+    </script>
+  </body>
+</html>

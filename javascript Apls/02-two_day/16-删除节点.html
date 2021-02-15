@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>删除</button>
+    <ul>
+      <li>秦培峰</li>
+      <li>秦凯雯</li>
+      <li>秦凯明</li>
+    </ul>
+    <script>
+      // 1.获取元素
+      let btn = document.querySelector("button");
+      let ul = document.querySelector("ul");
+      //2.删除元素 nide.removeChild(child)
+      //3.点击按钮，依次删除里面的孩子，当元素为空时，按钮点击无效
+      btn.onclick = function () {
+        if (ul.children.length == 0) {
+          this.disabled = true;
+        } else {
+          ul.removeChild(ul.children[0]);
+        }
+      };
+    </script>
+  </body>
+</html>

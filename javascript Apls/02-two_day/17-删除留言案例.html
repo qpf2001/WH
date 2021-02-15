@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        padding: 100px;
+      }
+
+      textarea {
+        width: 200px;
+        height: 100px;
+        border: 1px solid pink;
+        outline: none;
+        resize: none;
+      }
+
+      ul {
+        margin-top: 50px;
+      }
+
+      li {
+        width: 300px;
+        padding: 5px;
+        background-color: rgb(245, 209, 243);
+        color: red;
+        font-size: 14px;
+        margin: 15px 0;
+      }
+      li a {
+        float: right;
+        text-decoration: none;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul></ul>
+    <script>
+      let btn = document.querySelector("button");
+      let ul = document.querySelector("ul");
+      let text = document.querySelector("textarea");
+      btn.onclick = function () {
+        if (text.value == "") {
+          alert("您还输入内容");
+          return false;
+        } else {
+          //创建元素
+          let li = document.createElement("li");
+          li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+          //添加元素
+          ul.insertBefore(li, ul.children[0]);
+          //删除元素，删除的时当前链接的li
+          let remove = document.querySelectorAll("a");
+          for (let i = 0; i < remove.length; i++) {
+            remove[i].onclick = function () {
+              //node.removeChild(child); 删除的时li 当前a 所在的li this.parentNode;
+              ul.removeChild(this.parentNode);
+            };
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>猪</li>
+      <li>狗</li>
+      <li>牛</li>
+    </ul>
+    <script>
+      let ul = document.querySelector("ul");
+      //1.如果括号参数为空，或者flase, 则是浅拷贝，即只克隆复制节点本身，不克隆里面的子节点
+      // 如果括号参数为true, 则是深拷贝，会复制节点本身以及里面的所有的子节点
+      let lili = ul.children[0].cloneNode(true);
+      ul.appendChild(lili);
+    </script>
+  </body>
+</html>
