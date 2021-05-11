@@ -45,11 +45,12 @@
       input.onblur = function () {
         if (this.value.length < 6 || this.value.length > 16) {
           message.className = "message wrong";
-          message.innerHTML = "您输入的位数不对，要求6~16位";
+          message.innerHTML = "请重新输入";
         } else {
           message.className = "message right";
           message.innerHTML = "输入正确";
         }
+        console.log(input.value.length);
       };
     </script>
   </body>

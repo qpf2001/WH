@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+          }
+
+          td,
+          th {
+            border: 1px solid #333;
+          }
+
+          thead tr {
+            height: 40px;
+            background-color: #eee;
+          }
+          a {
+            text-decoration: none;
+            color: brown;
+          }
+        </style>
+      </head>
+
+      <body>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>姓名</th>
+              <th>科目</th>
+              <th>成绩</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <script>
+          let datas = [
+            {
+              name: "秦培峰",
+              subject: "javacript",
+              score: "100",
+            },
+            {
+              name: "武则天",
+              subject: "javacript",
+              score: "80",
+            },
+            {
+              name: "马小跳",
+              subject: "javacript",
+              score: "90",
+            },
+            {
+              name: "二狗子",
+              subject: "javacript",
+              score: "40",
+            },
+          ];
+          let tbody = document.querySelector("tbody");
+          for (let i = 0; i < datas.length; i++) {
+            let tr = document.createElement("tr");
+            tbody.appendChild(tr);
+            for (k in datas[i]) {
+              let td = document.createElement("td");
+              td.innerHTML = datas[i][k];
+              tr.appendChild(td);
+            }
+            let td = document.createElement("td");
+            td.innerHTML = "<a href='#'>删除</a>";
+            tr.appendChild(td);
+            let del = document.querySelectorAll("a");
+            for (let i = 0; i < del.length; i++) {
+              del[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode);
+              };
+            }
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
