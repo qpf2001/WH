@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>传统</button>
+    <button>方法监听</button>
+    <button>IE9 之前</button>
+    <script>
+      let btn = document.querySelectorAll("button");
+      //1.同一个元素同一个事件只能设置一个处理函数，最后注册的处理函数将会覆盖前面注册的处理函数
+      btn[0].onclick = function () {
+        alert("你好！");
+      };
+      btn[0].onclick = function () {
+        alert("我不好！");
+      };
+      //2.事件监听注册事件，addEventListener 里面的事件类型是字符串 必定加引号, 而且不带on
+      btn[1].addEventListener("click", function () {
+        alert("不不不，你好！");
+      });
+      btn[1].addEventListener("click", function () {
+        alert("不不不，你是信球！");
+      });
+      //3.attachEvent IE9以前的版本支持
+      btn[2].attachEvent("onclick", function () {
+        alert("我太老了");
+      });
+    </script>
+  </body>
+</html>
