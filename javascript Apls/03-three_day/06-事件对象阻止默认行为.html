@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>秦培峰</div>
+    <a href="http:www.baidu.com">百度</a>
+    <form action="">
+      <input type="submit" value="提交" name="sub" />
+    </form>
+    <script>
+      let div = document.querySelector("div");
+      div.addEventListener("click", fn);
+      div.addEventListener("mouseover", fn);
+      div.addEventListener("mouseout", fn);
+      function fn(e) {
+        console.log(e.type);
+      }
+      let a = document.querySelector("a");
+      a.addEventListener("click", function (e) {
+        e.preventDefault; //dom 标准写法
+      });
+      a.onclick = function () {
+        //普通浏览器  e.preventDefault; 方法
+        //
+      };
+    </script>
+  </body>
+</html>

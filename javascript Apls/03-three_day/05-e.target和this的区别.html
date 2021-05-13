@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>秦培峰</div>
+    <ul>
+      <li>王赞</li>
+      <li>王静</li>
+    </ul>
+    <script>
+      let div = document.querySelector("div");
+      let ul = document.querySelector("ul");
+      //常见对象的属性和方法
+      //1.e.target 返回的是触发对象（元素） this,返回的是绑定对象的事件（元素）
+      div.addEventListener("click", function (e) {
+        console.log(e.target);
+      });
+      ul.addEventListener("click", function (e) {
+        //我们给ul绑定了事件 那么this就指向ul
+        console.log(this);
+        //e.target指向我们点击的那个对象 谁触发了这个对象，那么就指向谁
+        console.log(e.target);
+      });
+      //兼容性处理
+      //   div.onclick = function (e) {
+      //     e = e || window.event;
+      //     let target = e.target || e.srcElemnet;
+      //     console.log(e.target);
+      //   };
+      //了解，this 相似于 currentTarget Ie678不认识
+    </script>
+  </body>
+</html>

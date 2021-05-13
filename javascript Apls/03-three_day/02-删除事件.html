@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        line-height: 100px;
+        text-align: center;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>点我</div>
+    <div>点我</div>
+    <div>点我</div>
+    <script>
+      let div = document.querySelectorAll("div");
+      //1.传统解锁方式
+      div[0].onclick = function () {
+        alert("你好");
+        div[0].onclick = null;
+      };
+      //2.removeEventListener 删除事件
+      div[1].addEventListener("click", fn); //这里fn的调用不用（）
+      function fn() {
+        alert("我不好");
+        div[1].removeEventListener("click", fn);
+      }
+      //3.
+      div[2].attachEvent("onclick", fn1);
+      function fn1() {
+        alert("你呢?");
+        div[2].detachEvent("onclick", fn1);
+      }
+    </script>
+  </body>
+</html>
