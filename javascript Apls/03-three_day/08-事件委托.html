@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul li {
+        margin: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>我是你爸爸hht hty</li>
+      <li>我是你爸爸</li>
+      <li>我是你爸爸</li>
+      <li>我是你爸爸</li>
+      <li>我是你爸爸</li>
+    </ul>
+    <script>
+      //事件委托的原理，给父亲节点添加侦听器，利用事件冒泡影响每一个子节点
+      let ul = document.querySelector("ul");
+      ul.addEventListener("click", function (e) {
+        for (let i = 0; i < ul.children.length; i++) {
+          this.children[i].style.backgroundColor = "";
+          for (let i = 0; i < ul.children.length; i++) {
+            e.target.style.backgroundColor = "pink";
+          }
+        }
+      });
+      console.log(ul.children.length);
+    </script>
+  </body>
+</html>

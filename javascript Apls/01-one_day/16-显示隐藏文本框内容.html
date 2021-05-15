@@ -24,7 +24,7 @@
       };
       //失去焦点事件
       text.onblur = function () {
-        if (this.value === "") {
+        if (this.value === "" || this.value !== "请输入内容") {
           text.value = "请输入内容";
         }
         this.style.color = "#999";

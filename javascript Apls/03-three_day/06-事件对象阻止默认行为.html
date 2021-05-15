@@ -22,11 +22,17 @@
       }
       let a = document.querySelector("a");
       a.addEventListener("click", function (e) {
-        e.preventDefault; //dom 标准写法
+        e.preventDefault(); //dom 标准写法
       });
       a.onclick = function () {
-        //普通浏览器  e.preventDefault; 方法
-        //
+        //普通浏览器  e.preventDefault(); 方法
+        //e.preventDefault();
+        //低版本浏览器 IE678 returnVale 属性
+        //e.returnVale
+        //我们可以利用return false 也能组织默认行为 没有兼容性问题
+        return false;
+        //后面的代码不再执行
+        alert("110");
       };
     </script>
   </body>

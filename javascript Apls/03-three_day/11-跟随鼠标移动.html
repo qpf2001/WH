@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+        top: 0px;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 200px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div>我会移动嘿嘿嘿</div>
+    <script>
+      let div = document.querySelector("div");
+      document.addEventListener("mousemove", function (e) {
+        //1.mousemove 只要移动一像素就会获得最新鼠标坐标，
+        let x = e.pageX;
+        let y = e.pageY;
+        div.style.left = x - 100 + "px";
+        div.style.top = y - 60 + "px";
+      });
+    </script>
+  </body>
+</html>
