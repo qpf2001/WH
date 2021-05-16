@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      setInterval(function () {
+        console.log("继续打印");
+      }, 1000);
+    </script>
+    //1.setTimeout延时时间到了，就去调用这个函数，只能调用一次，就结束了这个定时器
+    //2.setInterval 每个这个延时时间，
+    就去调用这个回调函数，会调用很多次，重复调用这个函数
+  </body>
+</html>

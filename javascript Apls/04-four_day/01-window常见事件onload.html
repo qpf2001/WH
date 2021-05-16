@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   window.onload = function () {
+      //     let btn = document.querySelector("button");
+      //     btn.addEventListener("click", function () {
+      //       alert("你好");
+      //     });
+      //   };
+      window.addEventListener("load", function () {
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+          alert("你好");
+        });
+      });
+      window.addEventListener("load", function () {
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+          alert("我不好");
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        alert("你好吗？");
+      });
+      //load 等页面元素全部加载完毕，包括 dom元素，图片，flash css等，才开始执行
+      //DOMContentLoaded 是DOM 加载完毕， 不包含dom元素，图片，flash css等，就可以执行
+    </script>
+    <button>点击</button>
+  </body>
+</html>

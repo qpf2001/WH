@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        color: #fff;
+        text-align: center;
+        line-height: 200px;
+        margin: 200px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>走过路过不要错过</div>
+    <script>
+      let close = document.querySelector("div");
+      setTimeout(function () {
+        close.style.display = "none";
+      }, 5000);
+    </script>
+  </body>
+</html>
