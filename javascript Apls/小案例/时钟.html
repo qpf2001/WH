@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>时钟</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        list-style: none;
+      }
+      body {
+        background-color: #0096bb;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .clock {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 10px solid rgba(14, 0, 0, 0.041);
+        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3) inset;
+      }
+      .clock::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        background-color: #424242;
+        border-radius: 50%;
+      }
+      .scale li {
+        width: 2px;
+        height: 10px;
+        background-color: #424242;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform-origin: center 135px;
+      }
+
+      .scale li:nth-child(1) {
+        background-color: none;
+        transform: rotate(30deg);
+      }
+      .scale li:nth-child(2) {
+        transform: rotate(60deg);
+      }
+      .scale li:nth-child(3) {
+        background: none;
+        transform: rotate(90deg);
+      }
+      .scale li:nth-child(4) {
+        transform: rotate(120deg);
+      }
+      .scale li:nth-child(5) {
+        transform: rotate(150deg);
+      }
+      .scale li:nth-child(6) {
+        background: none;
+        transform: rotate(180deg);
+      }
+      .scale li:nth-child(7) {
+        transform: rotate(210deg);
+      }
+      .scale li:nth-child(8) {
+        transform: rotate(240deg);
+      }
+      .scale li:nth-child(9) {
+        background: none;
+        transform: rotate(270deg);
+      }
+      .scale li:nth-child(10) {
+        transform: rotate(300deg);
+      }
+      .scale li:nth-child(11) {
+        transform: rotate(330deg);
+      }
+      .scale li:nth-child(12) {
+        transform: rotate(360deg);
+      }
+      .number li {
+        width: 20px;
+        height: 20px;
+        background-color: #424242;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        line-height: 20px;
+      }
+      .number li:nth-child(1) {
+        top: 0;
+        left: calc(50% - 10px);
+      }
+      .number li:nth-child(2) {
+        right: 0;
+        top: calc(50% - 10px);
+      }
+      .number li:nth-child(3) {
+        bottom: 0;
+        left: calc(50% - 10px);
+      }
+      .number li:nth-child(4) {
+        left: 0;
+        top: calc(50% - 10px);
+      }
+      .hour,
+      .min,
+      .sec {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: calc(50% - 60px);
+        left: calc(50% - 60px);
+      }
+      .hour::before {
+        content: "";
+        position: absolute;
+        top: 13px;
+        left: calc(50% - 3px);
+        width: 6px;
+        height: 40px;
+        background-color: rgb(110, 49, 25);
+        border-radius: 6px 6px 0 0;
+      }
+      .min::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: calc(50% - 2px);
+        width: 4px;
+        height: 60px;
+        background-color: rgb(170, 62, 0);
+        border-radius: 4px 4px 0 0;
+      }
+      .sec::before {
+        content: "";
+        position: absolute;
+        top: -35px;
+        left: calc(50% - 1px);
+        width: 2px;
+        height: 120px;
+        background-color: rgb(170, 62, 0);
+        border-radius: 2px 2px 0px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <ul class="scale">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class="number">
+          <li>12</li>
+          <li>3</li>
+          <li>6</li>
+          <li>9</li>
+        </ul>
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+      </div>
+    </div>
+    <script>
+      let hour = document.querySelector(".hour");
+      let min = document.querySelector(".min");
+      let sec = document.querySelector(".sec");
+      setInterval(function () {
+        let time = new Date();
+        let h = time.getHours();
+        let m = time.getMinutes();
+        let s = time.getSeconds();
+        hour.style.transform = `rotate(${
+          h * 30 + (m / 60) * 30 + (s / 60 / 60) * 30
+        }deg)`;
+        min.style.transform = `rotate(${m * 6 + (s / 60) * 6}deg)`;
+        sec.style.transform = `rotate(${s * 6}deg)`;
+      }, 0);
+    </script>
+  </body>
+</html>

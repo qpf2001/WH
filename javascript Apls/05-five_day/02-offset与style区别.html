@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 231px;
+        background-color: aqua;
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" style="width: 100px"></div>
+    <script>
+      let box = document.querySelector(".box");
+      console.log(box.offsetWidth);
+      console.log(box.style.width);
+      box.style.width = "300px";
+    </script>
+  </body>
+</html>
