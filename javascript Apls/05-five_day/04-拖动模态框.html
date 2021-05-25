@@ -119,11 +119,11 @@
     <div id="login" class="login">
       <div id="title" class="login-title">
         登录会员
-        <span
-          ><a id="closeBtn" href="javascript:void(0);" class="close-login"
-            >关闭</a
-          ></span
-        >
+        <span></span>
+          <a id="closeBtn" href="javascript:void(0);" class="close-login">
+            关闭
+          </a>
+        </span>
       </div>
       <div class="login-input-content">
         <div class="login-input">
@@ -155,30 +155,29 @@
     <div id="bg" class="login-bg"></div>
     <script>
       // 1. 获取元素
-      var login = document.querySelector(".login");
-      var mask = document.querySelector(".login-bg");
-      var link = document.querySelector("#link");
-      var closeBtn = document.querySelector("#closeBtn");
-      var title = document.querySelector("#title");
-      link.addEventListener("click", function () {
-        login.style.display = "block";
-        mask.style.display = "block";
+      var login = document.querySelector('.login');
+      var mask = document.querySelector('.login-bg');
+      var link = document.querySelector('#link');
+      var closeBtn = document.querySelector('#closeBtn');
+      var title = document.querySelector('#title');
+      link.addEventListener('click', function () {
+        login.style.display = 'block';
+        mask.style.display = 'block';
       });
-      closeBtn.addEventListener("click", function () {
-        login.style.display = "none";
-        mask.style.display = "none";
+      closeBtn.addEventListener('click', function () {
+        login.style.display = 'none';
+        mask.style.display = 'none';
       });
-      title.addEventListener("mousedown", function (e) {
+      title.addEventListener('mousedown', function (e) {
         let x = e.pageX - login.offsetLeft;
         let y = e.pageY - login.offsetTop;
-        document.addEventListener("mousemove", move);
+        document.addEventListener('mousemove', move);
         function move(e) {
-          login.style.left = e.pageX - x + "px";
-          login.style.top = e.pageY - y + "px";
-          console.log(login.style.left);
+          login.style.left = e.pageX - x + 'px';
+          login.style.top = e.pageY - y + 'px';
         }
-        document.addEventListener("mouseup", function () {
-          document.removeEventListener("mousemove", move);
+        document.addEventListener('mouseup', function () {
+          document.removeEventListener('mousemove', move);
         });
       });
     </script>

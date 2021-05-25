@@ -6,20 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
       .box {
-        width: 300px;
-        height: 300px;
+        position: fixed;
+        width: 200px;
+        height: 200px;
         background-color: aqua;
-        margin: 200px auto;
+        cursor: pointer;
+        border-radius: 50%;
       }
     </style>
   </head>
   <body>
     <div class="box"></div>
     <script>
-      let box = document.querySelector(".box");
-      console.log("距离左边是" + box.offsetWidth);
-      console.log("距离上便是" + box.style.top);
+      let box = document.querySelector('.box');
+      box.addEventListener('mousedown', function (e) {
+        let x = e.pageX - box.offsetLeft;
+        let y = e.pageY - box.offsetTop;
+        document.addEventListener('mousemove', move);
+        function move(e) {
+          box.style.left = e.pageX - x + 'px';
+          box.style.top = e.pageY - y + 'px';
+        }
+        document.addEventListener('mouseup', function () {
+          document.removeEventListener('mousemove', move);
+        });
+      });
     </script>
   </body>
 </html>

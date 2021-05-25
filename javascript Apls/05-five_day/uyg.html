@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .preview_img {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        left: 30%;
+        text-align: center;
+      }
+
+      .preview_img > img {
+        width: 80%;
+      }
+
+      .mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: #fede4f;
+        opacity: 0.5;
+        border: 1px solid #ccc;
+        cursor: move;
+      }
+
+      .big {
+        display: none;
+        position: absolute;
+        left: 300px;
+        top: 0;
+        width: 400px;
+        height: 400px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+      }
+
+      .big img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="preview_img">
+      <img src="../images/shoubiao.jpg" alt="" />
+      <div class="mask"></div>
+      <div class="big">
+        <img src="../images/shoubiao.jpg" alt="" class="bigImg" />
+      </div>
+    </div>
+    <script>
+      function $(names) {
+        return document.querySelector(names);
+      }
+      let preview_img = $('.preview_img');
+      let mask = $('.mask');
+      let big = $('.big');
+      preview_img.addEventListener('mouseover', function () {
+        mask.style.display = 'block';
+        big.style.display = 'block';
+      });
+      preview_img.addEventListener('mouseout', function () {
+        mask.style.display = 'none';
+        big.style.display = 'none';
+      });
+      preview_img.addEventListener('mousemove', function (e) {
+        let x = e.pageX - this.offsetLeft;
+        let y = e.pageY - this.offsetTop;
+        let maskX = x - mask.offsetWidth / 2;
+        let maskY = y - mask.offsetHeight / 2;
+        let maskMax = preview_img.offsetWidth - mask.offsetWidth;
+        if (maskX <= 0) {
+          maskX = 0;
+        } else if (maskX >= maskMax) {
+          maskX = maskMax;
+        }
+        if (maskY <= 0) {
+          maskY = 0;
+        } else if (maskY >= maskMax) {
+          maskY = maskMax;
+        }
+        mask.style.left = maskX + 'px';
+        mask.style.top = maskY + 'px';
+        // 3. 大图片的移动距离 = 遮挡层移动距离 * 大图片最大移动距离 / 遮挡层的最大移动距离
+        // 大图
+        let bigImg = $('.bigImg');
+        let bigMax = bigImg.offsetWidth - big.offsetHeight;
+        let bigX = (maskX * bigMax) / maskMax;
+        let bigY = (maskY * bigMax) / maskMax;
+        bigImg.style.left = -bigX + 'px';
+        bigImg.style.top = -bigY + 'px';
+      });
+    </script>
+  </body>
+</html>

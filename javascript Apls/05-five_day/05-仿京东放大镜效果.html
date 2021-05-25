@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: 200px auto;
+        border: 1px solid #eee;
+      }
+      .box > img {
+        width: 90%;
+      }
+      .cover {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        background-color: rgba(2, 2, 2, 0.2);
+        display: none;
+        cursor: pointer;
+      }
+      .big {
+        position: absolute;
+        top: -100px;
+        left: 200px;
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        display: none;
+        border: 1px solid red;
+      }
+      .big img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="../images/shoubiao.jpg" alt="" />
+      <div class="cover"></div>
+      <div class="big">
+        <img src="../images/shoubiao.jpg" alt="" id="bigImg" />
+      </div>
+    </div>
+    <script>
+      function $(fn) {
+        return document.querySelector(fn);
+      }
+      let box = $('.box');
+      let cover = $('.cover');
+      let big = $('.big');
+      // 1. 当我们鼠标经过 preview_img 就显示和隐藏 mask 遮挡层 和 big 大盒子
+      box.addEventListener('mouseover', function () {
+        cover.style.display = 'block';
+        big.style.display = 'block';
+      });
+      box.addEventListener('mouseout', function () {
+        cover.style.display = 'none';
+        big.style.display = 'none';
+      });
+      // 2. 鼠标移动的时候，让黄色的盒子跟着鼠标来走
+      box.addEventListener('mousemove', function (e) {
+        // (1). 先计算出鼠标在盒子内的坐标
+        let x = e.pageX - this.offsetLeft;
+        let y = e.pageY - this.offsetTop;
+        // console.log(x, y);
+        // (2) 减去盒子高度 160的一半 是 80 就是我们cover 的最终 left 和top值了
+        // (3) 我们cover 移动的距离
+        let coverX = x - cover.offsetWidth / 2;
+        let coverY = y - cover.offsetHeight / 2;
+        // (4) 如果x 坐标小于了0 就让他停在0 的位置
+        // 遮挡层的最大移动距离
+        let coverMax = box.offsetWidth - cover.offsetWidth;
+        if (coverX <= 0) {
+          coverX = 0;
+        } else if (coverX >= coverMax) {
+          coverX = coverMax;
+        } else if (coverY <= 0) {
+          coverY = 0;
+        } else if (coverY >= coverMax) {
+          coverY = coverMax;
+        }
+        cover.style.left = coverX + 'px';
+        cover.style.top = coverY + 'px';
+        // 3. 大图片的移动距离 = 遮挡层移动距离 * 大图片最大移动距离 / 遮挡层的最大移动距离
+        // 大图
+        let bigImg = $('#bigImg');
+        let bigMax = bigImg.offsetWidth - big.offsetWidth;
+        let bigX = (coverX * bigMax) / coverMax;
+        let bigY = (coverY * bigMax) / coverMax;
+        bigImg.style.left = -bigX + 'px';
+        bigImg.style.top = -bigY + 'px';
+      });
+    </script>
+  </body>
+</html>

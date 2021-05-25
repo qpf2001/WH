@@ -7,22 +7,23 @@
     <title>Document</title>
   </head>
   <body>
-    手机号码: <input type="text" />
+    手机号码:
+    <input type="text" />
     <button>发送</button>
     <script>
-      let text = document.querySelector("input");
-      let btn = document.querySelector("button");
+      let text = document.querySelector('input');
+      let btn = document.querySelector('button');
       let time = 9;
-      btn.addEventListener("click", function () {
+      btn.addEventListener('click', function () {
         btn.disabled = true;
         let timer = setInterval(function () {
           if (time == 0) {
             clearInterval(timer);
             btn.disabled = false;
-            btn.innerHTML = "发送";
+            btn.innerHTML = '发送';
             time = 10;
           } else {
-            btn.innerHTML = "还剩下" + time + "秒";
+            btn.innerHTML = '还剩下' + time + '秒';
             time--;
           }
         }, 1000);
