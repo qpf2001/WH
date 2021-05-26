@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        width: 100px;
+        height: 200px;
+        border: 1px solid red;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸
+      我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸我是你爸爸
+    </div>
+    <script>
+      let div = document.querySelector('div');
+      div.addEventListener('scroll', function () {
+        console.log(div.scrollTop);
+      });
+    </script>
+  </body>
+</html>

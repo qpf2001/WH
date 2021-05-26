@@ -36,5 +36,8 @@ element.offsetHeight : 返回自身包括padding,边框，内容区的高度，�
 + style.width是可读写属性，可以获取也可以赋值
 + 所以，我们要想给元素更改值，则需要用style改变
 
+#### e.page
 
+e.pagex  鼠标在页面上x轴的位置
 
+e.pageY 鼠标在页面上y轴的位置

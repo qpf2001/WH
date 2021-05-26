@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .center {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      header {
+        height: 100px;
+        background-color: purple;
+      }
+      .banner {
+        height: 300px;
+        background-color: rgb(67, 67, 218);
+        margin: 20px 0;
+      }
+      .container {
+        height: 800px;
+        background-color: crimson;
+      }
+      .back-top {
+        position: absolute;
+        top: 400px;
+        right: 100px;
+        width: 40px;
+        height: 100px;
+        background-color: pink;
+        padding-top: 50px;
+        text-align: center;
+      }
+      span {
+        cursor: pointer;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <header>头部区域</header>
+      <div class="banner">banner区域</div>
+      <div class="container">主题内容区域</div>
+    </div>
+    <div class="back-top">
+      <span>返回顶部</span>
+    </div>
+    <script>
+      let backtop = document.querySelector('.back-top');
+      let span = document.querySelector('span');
+      //banner.offsetTop 就是被减去头部的大小
+      let banner = document.querySelector('.banner');
+      let bannerTop = banner.offsetTop;
+      let back = backtop.offsetTop - bannerTop;
+      let container = document.querySelector('.container');
+      let containerTop = container.offsetTop;
+      //页面滚动事件
+      document.addEventListener('scroll', function () {
+        if (window.pageYOffset >= bannerTop) {
+          backtop.style.position = 'fixed';
+          backtop.style.top = back + 'px';
+        } else {
+          backtop.style.position = 'absolute';
+          backtop.style.top = 400 + 'px';
+        }
+        if (window.pageYOffset >= containerTop) {
+          span.style.display = 'block';
+        } else {
+          span.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

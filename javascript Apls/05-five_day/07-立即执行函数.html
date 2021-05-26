@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //立刻执行函数，不需要调用，立马就能够自己执行函数
+      function fn() {
+        console.log('你好吗');
+      }
+      fn();
+      //写法
+      //( function(){})()   或者   (function(){}())
+      (function (a, b) {
+        console.log(a / b);
+      })(960, 120);
+      (function (a, b) {
+        console.log(a + b);
+      })(2, 6);
+      //立即执行函数的好处，就是独立创建了一个作用域，里面里变量都是局部变量，不会有命名冲突+
+    </script>
+  </body>
+</html>

@@ -12,9 +12,10 @@
         height: 160px;
         margin: 200px auto;
         border: 1px solid #eee;
+        text-align: center;
       }
       .box > img {
-        width: 90%;
+        width: 85%;
       }
       .cover {
         position: absolute;
@@ -32,7 +33,6 @@
         height: 400px;
         overflow: hidden;
         display: none;
-        border: 1px solid red;
       }
       .big img {
         position: absolute;
@@ -82,7 +82,8 @@
           coverX = 0;
         } else if (coverX >= coverMax) {
           coverX = coverMax;
-        } else if (coverY <= 0) {
+        }
+        if (coverY <= 0) {
           coverY = 0;
         } else if (coverY >= coverMax) {
           coverY = coverMax;
