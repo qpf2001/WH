@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(8, 49, 161);
+        color: aliceblue;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+      }
+      .con {
+        position: absolute;
+        top: 0;
+        right: -150px;
+        width: 150px;
+        height: 50px;
+        background-color: crimson;
+      }
+    </style>
+    <script src="../js/动画.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <span>&lt;---</span>
+      <div class="con">问题反馈</div>
+    </div>
+    <script>
+      let box = document.querySelector('.box');
+      let con = document.querySelector('.con');
+      box.addEventListener('mouseenter', function () {
+        animate(con, -150);
+        box.children[0].innerHTML = '--->';
+      });
+      box.addEventListener('mouseleave', function () {
+        animate(con, 50);
+        box.children[0].innerHTML = '<---';
+      });
+    </script>
+  </body>
+</html>

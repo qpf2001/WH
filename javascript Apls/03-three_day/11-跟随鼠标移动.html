@@ -22,13 +22,13 @@
   <body>
     <div>我会移动嘿嘿嘿</div>
     <script>
-      let div = document.querySelector("div");
-      document.addEventListener("mousemove", function (e) {
+      let div = document.querySelector('div');
+      document.addEventListener('mousemove', function (e) {
         //1.mousemove 只要移动一像素就会获得最新鼠标坐标，
         let x = e.pageX;
         let y = e.pageY;
-        div.style.left = x - 100 + "px";
-        div.style.top = y - 60 + "px";
+        div.style.left = x - div.offsetWidth / 2 + 'px';
+        div.style.top = y - div.offsetHeight / 2 + 'px';
       });
     </script>
   </body>

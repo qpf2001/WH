@@ -10,15 +10,15 @@
     <button class="btn1">开始</button>
     <button class="btn2">结束</button>
     <script>
-      let btn1 = document.querySelector(".btn1");
-      let btn2 = document.querySelector(".btn2");
+      let btn1 = document.querySelector('.btn1');
+      let btn2 = document.querySelector('.btn2');
       let timer = null; //定义一个全局变量，null 是一个空对象。
-      btn1.addEventListener("click", function () {
+      btn1.addEventListener('click', function () {
         timer = setInterval(function () {
-          console.log("你好吗？");
+          console.log('你好吗？');
         }, 1000);
       });
-      btn2.addEventListener("click", function () {
+      btn2.addEventListener('click', function () {
         clearInterval(timer);
       });
     </script>

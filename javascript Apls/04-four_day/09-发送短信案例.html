@@ -13,20 +13,22 @@
     <script>
       let text = document.querySelector('input');
       let btn = document.querySelector('button');
-      let time = 9;
+      let time = 5;
       btn.addEventListener('click', function () {
         btn.disabled = true;
-        let timer = setInterval(function () {
+        fn();
+        let timer = setInterval(fn, 1000);
+        function fn() {
           if (time == 0) {
             clearInterval(timer);
             btn.disabled = false;
             btn.innerHTML = '发送';
-            time = 10;
+            time = 5;
           } else {
             btn.innerHTML = '还剩下' + time + '秒';
             time--;
           }
-        }, 1000);
+        }
       });
       //思路:
       //按钮点击之后，会禁用  disable = ture

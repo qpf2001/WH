@@ -46,10 +46,10 @@
         let hour = document.querySelector(".hour"); //时
         let minute = document.querySelector(".minute"); //分
         let second = document.querySelector(".second"); //秒
-        let inputTime = +new Date("2021-5-23 14:10:00");
+        let inputTime = +new Date("2021-5-27 14:10:00");
         countDown(); //先调用一下这个函数，防止第一次刷新页面有空白，一定要写到inputTime变量下面
         // 开启定时器
-        setInterval(countDown, 1000);
+        setInterval(countDown,1000);
         function countDown() {
           let nowTime = +new Date();
           let times = (inputTime - nowTime) / 1000;
